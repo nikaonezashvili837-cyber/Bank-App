@@ -8,11 +8,13 @@ namespace Bank_App.Controllers
         [Route("get-current-balance/{accountNumber:int}")]
         public IActionResult CurrentBalance(int accountNumber)
         {
-            if(accountNumber != 1001)
+            Account account = new Account();
+            
+            if(accountNumber != account.AccountNumber )
             {
                 return NotFound("account number is incorect");
             }
-            return Ok($"Balance: 5000");
+            return Ok($"Balance: {account.CurrentBalance}");
         }
 
     }

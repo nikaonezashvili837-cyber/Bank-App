@@ -2,19 +2,15 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Bank_App.Controllers
 {
+    
     public class AccountDetailsController : Controller
     {
         // GET: AccountDetails
         [Route("Account-details")]
         public IActionResult Details()
         {
-            var json = new 
-            {
-                accountNumber = 1001,
-                accountHolderName= "Example Name",
-                currentBalance = 5000,
-            };
-            return Ok(json);
+            Account account = new Account();
+            return Ok(account);
         }
     }
 }
